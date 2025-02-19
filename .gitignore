@@ -1,1 +1,5 @@
+# Nesse arquivo podemos listar os diretórios e arquivos que devem ser ignorados pelo git
+
 dados
+resultados
+figuras
