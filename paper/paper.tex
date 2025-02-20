@@ -4,8 +4,10 @@
 % Onde eh configurado todo o documento
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}
+
 \usepackage[brazil]{babel}
 \usepackage{graphicx}
+\usepackage[round, authoryear, sort]{natbib}
 
 % Corpo do documento
 % Onde eh escrito o texto
@@ -32,6 +34,8 @@ O começo de uma nova era. Não houve um dia que não chovia fogo.
 
 E assim o Yago não viu o meu retorno. De todos os países que ele visitou,
  todos estavam com o tempo mudando.
+ 
+Trabalhos anteriores bem legais fazem coisas parecidas \citep{Osman2021}
 
 \section{Metodologia}
 
@@ -75,5 +79,8 @@ Analisamos os dados de ... países. São, muitos países para contar nos dedos.
 \end{figure}
 
 OS resultados da análise de variação de temperatura estão na Figura \ref{fig:variacao}
+
+\bibliographystyle{apalike}
+\bibliography{referencias.bib}
 
 \end{document}
