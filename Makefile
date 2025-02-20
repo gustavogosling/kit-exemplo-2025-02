@@ -3,10 +3,13 @@
 # alvo: pre-requisito1 pre-requisito2....
 #    comandos que usam os pre-requisitos para geral o alvo
 
-all: resultados/variacao_temperatura.csv resultados/numero_de_dados.txt figuras/variacao_temperatura.png
+all: paper/paper.pdf resultados/numero_de_dados.txt
 
 clean:
-	rm -rfv resultados dados
+	rm -rfv resultados dados figuras paper/paper.pdf
+	
+paper/paper.pdf: paper/paper.tex figuras/variacao_temperatura.png
+	tectonic -X compile paper/paper.tex
 
 resultados/numero_de_dados.txt: dados/temperature-data.zip
 	mkdir -p resultados
@@ -15,7 +18,7 @@ resultados/numero_de_dados.txt: dados/temperature-data.zip
 dados/temperature-data.zip: code/baixa_dados.py
 	python code/baixa_dados.py dados
 	
-figuras/variacao_temperatura.png: code/plota_dados.py
+figuras/variacao_temperatura.png: code/plota_dados.py resultados/variacao_temperatura.csv
 	mkdir -p figuras
 	python code/plota_dados.py resultados/variacao_temperatura.csv figuras/variacao_temperatura.png
 	
