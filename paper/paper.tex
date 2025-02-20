@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}
 \usepackage[brazil]{babel}
-
+\usepackage{graphicx}
 
 % Corpo do documento
 % Onde eh escrito o texto
@@ -16,6 +16,9 @@
 \author{Gustavo Gosling, Noá Giovanni}
 
 \maketitle
+
+% \pagebreak
+% quebra a página
 
 \begin{abstract}
 Texto Basico no LaTeX, tipo um resumo.
@@ -40,14 +43,14 @@ A equação da reta é:
 
 \begin{equation}
 T(t)= a t + b,
-\label{Yago}
+\label{eq:variacao}
 \end{equation}
 
 \noindent
 onde $T$ é a temperatura (em graus Celsius), $t$ é o tempo (em anos),
  $a$ é o coeficiente angular e $b$ é o coeficiente linear (em graus Celsius)
 
-Utilizamos a equação \ref{Yago} em um código Python para fazer um ajuste da reta com
+Utilizamos a equação \ref{eq:variacao} em um código Python para fazer um ajuste da reta com
 o método dos mínimos quadrados
 
 Outra equação doida é:
@@ -55,5 +58,22 @@ Outra equação doida é:
 \begin{equation}
 y = \int_\Omega x dx
 \end{equation}
+
+\section{Resultados}
+
+Analisamos os dados de ... países. São, muitos países para contar nos dedos.
+
+\begin{figure}[!tb]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{../figuras/variacao_temperatura.png}
+    \caption{
+    Variação de temperatura média mensal dos cinco últimos anos.
+    a) Países com as 5 maiores variações positivas de temperatura.
+    b) Países com as 5 maiores variações negativas de temperatura.
+    }
+    \label{fig:variacao}
+\end{figure}
+
+OS resultados da análise de variação de temperatura estão na Figura \ref{fig:variacao}
 
 \end{document}
