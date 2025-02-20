@@ -1,0 +1,59 @@
+% Documento LaTeX exemplo
+
+% Cabecalho do documento
+% Onde eh configurado todo o documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage[brazil]{babel}
+
+
+% Corpo do documento
+% Onde eh escrito o texto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Análise de variação de temperatura dos últimos cinco anos}
+\author{Gustavo Gosling, Noá Giovanni}
+
+\maketitle
+
+\begin{abstract}
+Texto Basico no LaTeX, tipo um resumo.
+
+\end{abstract}
+
+\section{Introdução}
+
+Isso vai ser outra seção.
+O começo de uma nova era. Não houve um dia que não chovia fogo.
+
+E assim o Yago não viu o meu retorno. De todos os países que ele visitou,
+ todos estavam com o tempo mudando.
+
+\section{Metodologia}
+
+Yago ajustou uma reta aos cinco últimos anos dos dados de temperatura
+ média mensal para cada país que visitou.
+Assim calculou-se a taxa de variação da temperatura recente.
+
+A equação da reta é:
+
+\begin{equation}
+T(t)= a t + b,
+\label{Yago}
+\end{equation}
+
+\noindent
+onde $T$ é a temperatura (em graus Celsius), $t$ é o tempo (em anos),
+ $a$ é o coeficiente angular e $b$ é o coeficiente linear (em graus Celsius)
+
+Utilizamos a equação \ref{Yago} em um código Python para fazer um ajuste da reta com
+o método dos mínimos quadrados
+
+Outra equação doida é:
+
+\begin{equation}
+y = \int_\Omega x dx
+\end{equation}
+
+\end{document}
