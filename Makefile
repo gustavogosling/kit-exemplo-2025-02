@@ -6,14 +6,17 @@
 all: paper/paper.pdf resultados/numero_de_dados.txt
 
 clean:
-	rm -rfv resultados dados figuras paper/paper.pdf
+	rm -rfv resultados dados figuras paper/paper.pdf paper/paises.tex
 	
-paper/paper.pdf: paper/paper.tex figuras/variacao_temperatura.png
+paper/paper.pdf: paper/paper.tex figuras/variacao_temperatura.png paper/referencias.bib paper/paises.tex
 	tectonic -X compile paper/paper.tex
 
+paper/paises.tex: code/lista_paises.py
+	python code/lista_paises.py dados/temperatura > paper/paises.tex
+	
 resultados/numero_de_dados.txt: dados/temperature-data.zip
 	mkdir -p resultados
-	ls dados/temperatura/*.csv | wc -l > resultados/numero_de_dados.txt
+	ls dados/temperatura/*.csv | wc -l > resultados/numero_de_dados.tex
 	
 dados/temperature-data.zip: code/baixa_dados.py
 	python code/baixa_dados.py dados
